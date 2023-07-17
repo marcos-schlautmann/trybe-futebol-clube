@@ -1,13 +1,12 @@
-FROM node:16.14
+FROM node:16.14-alpine
 
 WORKDIR /app-frontend
 
-COPY ./frontend/package.json ./
-COPY ./frontend/package-lock.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY ./frontend/src ./src
+COPY . .
 
 EXPOSE 3000
 

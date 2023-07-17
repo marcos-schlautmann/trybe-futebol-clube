@@ -1,16 +1,15 @@
-FROM node:16.14
+FROM node:16.14-alpine
 
 WORKDIR /app-backend
 
-COPY ./backend/package.json ./
-COPY ./backend/package-lock.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY ./backend/src ./src
+COPY . .
 
 EXPOSE 3001
 
 ENTRYPOINT [ "npm", "run" ]
 
-CMD [ "start" ]
+CMD [ "dev" ]
