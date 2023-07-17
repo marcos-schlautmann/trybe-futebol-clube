@@ -18,7 +18,8 @@ class UsersSequelizeModel extends Model<
     declare password: string;
 }
 
-UsersSequelizeModel.init({
+UsersSequelizeModel.init(
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -26,26 +27,27 @@ UsersSequelizeModel.init({
       autoIncrement: true,
     },
     username: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     role: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     password: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
     sequelize: db,
-    modelName: 'users',
+    modelName: "users",
     timestamps: false,
+    underscored: true,
   }
 );
 
