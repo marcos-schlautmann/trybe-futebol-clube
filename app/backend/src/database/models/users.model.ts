@@ -4,18 +4,18 @@ import {
   InferAttributes,
   InferCreationAttributes,
   CreationOptional,
-} from "sequelize";
-import db from ".";
+} from 'sequelize';
+import db from '.';
 
 class UsersSequelizeModel extends Model<
-  InferAttributes<UsersSequelizeModel>,
-  InferCreationAttributes<UsersSequelizeModel>
+InferAttributes<UsersSequelizeModel>,
+InferCreationAttributes<UsersSequelizeModel>
 > {
-    declare id: CreationOptional<number>;
-    declare username: string;
-    declare role: string;
-    declare email: string;
-    declare password: string;
+  declare id: CreationOptional<number>;
+  declare username: string;
+  declare role: string;
+  declare email: string;
+  declare password: string;
 }
 
 UsersSequelizeModel.init(
@@ -45,10 +45,10 @@ UsersSequelizeModel.init(
   },
   {
     sequelize: db,
-    modelName: "users",
+    modelName: 'users',
     timestamps: false,
     underscored: true,
-  }
+  },
 );
 
 export default UsersSequelizeModel;

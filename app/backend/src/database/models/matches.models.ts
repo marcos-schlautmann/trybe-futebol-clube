@@ -4,12 +4,12 @@ import {
   InferAttributes,
   InferCreationAttributes,
   CreationOptional,
-} from "sequelize";
-import db from ".";
+} from 'sequelize';
+import db from '.';
 
 class MatchesSequelizeModel extends Model<
-  InferAttributes<MatchesSequelizeModel>,
-  InferCreationAttributes<MatchesSequelizeModel>
+InferAttributes<MatchesSequelizeModel>,
+InferCreationAttributes<MatchesSequelizeModel>
 > {
   declare id: CreationOptional<number>;
   declare homeTeamId: number;
@@ -50,10 +50,10 @@ MatchesSequelizeModel.init(
   },
   {
     sequelize: db,
-    modelName: "matches",
+    modelName: 'matches',
     timestamps: false,
     underscored: true,
-  }
+  },
 );
 
 export default MatchesSequelizeModel;
