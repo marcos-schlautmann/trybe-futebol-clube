@@ -17,5 +17,9 @@ export interface ICRUDModelDeleter {
   delete(id: ID): Promise<number>,
 }
 
+export interface ICRUDModelEmail<T> {
+  findByEmail(email: string): Promise<T | null>;
+}
+
 export interface ICRUDModel<T> extends ICRUDModelCreator<T>,
   ICRUDModelReader<T>, ICRUDModelUpdater<T>, ICRUDModelDeleter { }
