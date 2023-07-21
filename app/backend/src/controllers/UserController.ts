@@ -27,7 +27,6 @@ export default class UserController {
     }
     const tokenLogin = authorization.split(' ')[1];
     const emailLogin = JWT.decodeToken(tokenLogin) as IUser;
-    console.log(emailLogin);
 
     const response = await this.userService.findRole(emailLogin.email);
 

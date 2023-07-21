@@ -8,18 +8,18 @@ import { describe } from "mocha";
 import { app } from "../../src/app";
 import UsersSequelizeModel from "../database/models/users.model";
 import {
-    invalidEmailLoginBody,
-    invalidPasswordLoginBody,
-    noFields,
-    user,
-    validLoginBody,
+  invalidEmailLoginBody,
+  invalidPasswordLoginBody,
+  noFields,
+  user,
+  validLoginBody,
 } from "../tests/mocks/userMock";
 
 chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe.only("Testando funcionamento do login de User", function () {
+describe("Testando funcionamento do login de User", function () {
   afterEach(() => {
     sinon.restore();
   });
