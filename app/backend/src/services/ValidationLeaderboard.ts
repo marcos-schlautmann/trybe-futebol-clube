@@ -92,4 +92,14 @@ export default class ValidationStatusBuild {
       return total;
     }, 0);
   }
+
+  get goalsBalance(): number {
+    return this.goalsFavor - this.goalsOwn;
+  }
+
+  get efficiency(): number {
+    const maxPoints = this.matches.length * 3;
+    const accPoints = this.totalPoints;
+    return +((100 / maxPoints) * accPoints).toFixed(2);
+  }
 }
